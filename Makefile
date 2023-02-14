@@ -6,7 +6,7 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 10:32:42 by emohamed          #+#    #+#              #
-#    Updated: 2023/02/14 17:33:45 by emohamed         ###   ########.fr        #
+#    Updated: 2023/02/14 17:50:06 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = push_swap
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS =  print_exit.c push_swap.c
+SRCS =  print_exit.c push_swap.c check_arg.c
 
 LIBFT = libft/libft.a
 PRINTF = ft_printf/libftprintf.a
