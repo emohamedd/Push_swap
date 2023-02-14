@@ -35,6 +35,10 @@ When you are finished, send an EOF signal (ctrl+D) to check if the list is sorte
 
 ## Operations
 The following operations are allowed:
+![pa pb](https://user-images.githubusercontent.com/102475281/218693997-ef4d6bf0-32d6-4bf0-9258-0046636f90f3.png)
+![ra rb rr](https://user-images.githubusercontent.com/102475281/218694219-9eb63908-86d2-4681-a4eb-e90d77adebe4.png)
+![rra rrb rrr](https://user-images.githubusercontent.com/102475281/218694246-2c81b681-f5d4-4347-8df7-17b9ca9ac012.png)
+![sa sb ss](https://user-images.githubusercontent.com/102475281/218694295-72c664d0-e8f0-4fa4-af5b-875c21b87985.png)
 * `sa`: swap the first two elements of stack `a`.
 * `sb`: swap the first two elements of stack `b`.
 * `ss`: `sa` and `sb` at the same time.
