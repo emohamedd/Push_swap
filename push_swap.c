@@ -1,31 +1,44 @@
 
 #include "push_swap.h"
 
-int main(int argc, char **argv) {
-    int nums[argc];
+int main(int argc, char **argv) 
+{
+    int nums[argc-1];
     int num;
-    int i;
-    int j;
+    int i = 0;
+    int k = 0;
 
-    if (argc == 1)
-        print("No arguments passed\n");
-
-     i = 1;
-    while (i < argc) {
-         num = atoi(argv[i]);
-        if (num == 0 && argv[i][0] != '0')
-            print("Not a number\n");
-        j = 0;
-        while (j < i) {
-            if (num == nums[j]) 
-                print("There is A Duplicate Number\n");
-            j++;
+    while (k < argc-1) 
+    {
+        nums[k] = 0;
+        k++;
+    }
+    
+    int j = 1;
+    while (j < argc) 
+    {
+        num = atoi(argv[j]);
+        if (num == 0) 
+        {
+            printf("Error: argument %d is not a number\n", j);
+            return 1;
         }
 
-        nums[i - 1] = num;
-        i++;
-    }
+        k = 0;
+        while (k < i) 
+        {
+            if (nums[k] == num) 
+            {
+                printf("Error: duplicate number %d\n", num);
+                return 1;
+            }
+            k++;
+        }
 
-    printf("%sNo duplicates found\n%s", GREEN, END);
+        nums[i] = num;
+        i++;
+        j++;
+    }
+    printf("%sNo duplicates or errors found%s\n", GREEN, END);
     return 0;
 }
