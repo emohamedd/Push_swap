@@ -1,44 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/14 10:32:33 by emohamed          #+#    #+#             */
+/*   Updated: 2023/02/14 17:35:50 by emohamed         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv) 
+int main(int ac, char **av)
 {
-    int nums[argc-1];
+    int nums[ac];
     int num;
     int i = 0;
-    int k = 0;
+    int re = 0;
 
-    while (k < argc-1) 
+    if (ac == 1)
+        exit(0);
+
+    while (re < ac) 
     {
-        nums[k] = 0;
-        k++;
+        nums[re] = 0;
+        re++;
     }
     
     int j = 1;
-    while (j < argc) 
+    while (j < ac) 
     {
-        num = atoi(argv[j]);
-        if (num == 0) 
+        num = ft_atoi(av[j]);
+        re = 0;
+        while (re < i) 
         {
-            printf("Error: argument %d is not a number\n", j);
-            return 1;
-        }
 
-        k = 0;
-        while (k < i) 
-        {
-            if (nums[k] == num) 
+            if (nums[re] == num) 
             {
-                printf("Error: duplicate number %d\n", num);
+                ft_printf("%sError\n%s",RED, END);
                 return 1;
             }
-            k++;
+            re++;
         }
 
         nums[i] = num;
         i++;
         j++;
     }
-    printf("%sNo duplicates or errors found%s\n", GREEN, END);
+    ft_printf("%sSUCCES%s\n", GREEN, END);
     return 0;
 }

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/14 10:32:35 by emohamed          #+#    #+#             */
+/*   Updated: 2023/02/14 16:41:57 by emohamed         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
@@ -10,7 +21,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stddef.h>
-
+#include "ft_printf/ft_printf.h"
+#include "libft/libft.h"
 
 
 void print(char *str);
