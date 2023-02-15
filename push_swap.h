@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:32:35 by emohamed          #+#    #+#             */
-/*   Updated: 2023/02/15 08:48:14 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/02/15 09:03:07 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@
 void print(char *str);
 int check_arg(int ac, char **av) ;
 int	ft_atoi(char *str);
+
 
 #endif

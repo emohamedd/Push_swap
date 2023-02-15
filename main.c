@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_exit.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 10:32:39 by emohamed          #+#    #+#             */
-/*   Updated: 2023/02/15 09:37:24 by emohamed         ###   ########.fr       */
+/*   Created: 2023/02/15 08:57:28 by emohamed          #+#    #+#             */
+/*   Updated: 2023/02/15 09:15:26 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print(char *str)
-{
-    ft_printf("%s%s%s",RED, str, END);
-        exit(1);
-}   
+int main(int ac, char **av) 
+{	
+    if (check_arg(ac, av) == 0) 
+    {
+        ft_printf("%sSUCCES%s\n", GREEN, END);
+        return 0;
+    } 
+    else
+        return 1;
+}

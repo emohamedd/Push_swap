@@ -6,7 +6,7 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 10:32:42 by emohamed          #+#    #+#              #
-#    Updated: 2023/02/15 08:49:57 by emohamed         ###   ########.fr        #
+#    Updated: 2023/02/15 09:37:33 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,37 +16,46 @@ NAME = push_swap
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS =  print_exit.c push_swap.c check_arg.c new_atoi.c
+SRCS =  print_exit.c push_swap.c check_arg.c new_atoi.c  main.c
 
 # LIBFT = libft/libft.a
 PRINTF = ft_printf/libftprintf.a
 
-OBJS = $(SRCS:.c=.o)
+# GREEN		=	\e[38;5;118m
+# YELLOW		=	\e[38;5;226m
+# RED			=   \033[0;31m
+# RESET		=	\e[0m
 
-%.o : %.c
-	$(CC) $(CFLAGS) -c $^
+# BANNER =	$(GREEN)"██████╗░██╗░░░██╗░██████╗██╗░░██╗░░░░░░░██████╗░██╗░░░░░░░██╗░█████╗░██████╗░"$(RESET) \
+# 			$(GREEN)"██╔══██╗██║░░░██║██╔════╝██║░░██║░░░░░░██╔════╝░██║░░██╗░░██║██╔══██╗██╔══██╗"$(RESET) \
+# 			$(GREEN)"██████╔╝██║░░░██║╚█████╗░███████║█████╗╚█████╗░░╚██╗████╗██╔╝███████║██████╔╝"$(RESET) \
+# 			$(GREEN)"██╔═══╝░██║░░░██║░╚═══██╗██╔══██║╚════╝░╚═══██╗░░████╔═████║░██╔══██║██╔═══╝░"$(RESET) \
+# 			$(GREEN)"██║░░░░░╚██████╔╝██████╔╝██║░░██║░░░░░░██████╔╝░░╚██╔╝░╚██╔╝░██║░░██║██║░░░░░"$(RESET) \
+# 			$(GREEN)"╚═╝░░░░░░╚═════╝░╚═════╝░╚═╝░░╚═╝░░░░░░╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░░░░"$(RESET) \
+	
+
+OBJS = $(SRCS:.c=.o)	
+
+%.o : %.c	
+	$(CC) $(CFLAGS) -c $^	
 	
 all : $(NAME)
 
 $(NAME): $(OBJS)  $(PRINTF)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(PRINTF)
+		# @printf "$(BANNER)"
 
-$(LIBFT):
-	make -C libft/ all
 $(PRINTF):
 	make -C ft_printf/ all
 
 clean :
-	# make -C libft/ clean
 	make -C ft_printf/ clean
-	rm $(OBJS)
+	rm -f $(OBJS)
 
 fclean : clean
-	# make -C libft/ fclean
 	make -C ft_printf/ fclean
-	rm $(NAME)	
+	rm -f $(NAME)	
 
 re : fclean all
 
 .PHONY : all clean fclean re
-	
