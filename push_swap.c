@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:32:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/02/14 17:49:27 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:52:32 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,5 @@ int main(int ac, char **av) {
         return 0;
     } 
     else
-    {
         return 1;
-    }
 }
