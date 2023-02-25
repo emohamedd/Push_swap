@@ -14,9 +14,9 @@
 
 int	ft_atoi(char *str)
 {
-	int 	sign;
-	int 	result;
-	int		i;
+	int sign;
+	int result;
+	int i;
 
 	result = 0;
 	i = 0;
@@ -31,9 +31,9 @@ int	ft_atoi(char *str)
 	{
 		if (!(str[i] >= 48 && str[i] <= 57))
 		{
-            ft_printf("%sError%s\n", RED, END);
-            exit(1);
-        }
+			ft_printf("%sError%s\n", RED, END);
+			exit(1);
+		}
 		result *= 10;
 		result += str[i] - 48;
 		i++;

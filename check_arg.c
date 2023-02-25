@@ -12,41 +12,40 @@
 
 #include "push_swap.h"
 
-int check_arg(int ac, char **av) 
+int	check_arg(int ac, char **av)
 {
-    int nums[ac];
-    int num;
-    int i = 0;
-    int re = 0;
+	int	nums[ac];
+	int	num;
+	int	i;
+	int	re;
+	int	j;
 
-    if (ac == 1)
-        return 0;
-
-    while (re < ac) 
-    {
-        nums[re] = 0;
-        re++;
-    }
-    
-    int j = 1;
-    while (j < ac) 
-    {
-        num = ft_atoi(av[j]);
-        re = 0;
-        while (re < i) 
-        {
-
-            if (nums[re] == num) 
-            {
-                ft_printf("%sError\n%s",RED, END);
-                return 1;
-            }
-            re++;
-        }
-
-        nums[i] = num;
-        i++;
-        j++;
-    }
-    return 0;
+	i = 0;
+	re = 0;
+	if (ac == 1)
+		return (0);
+	while (re < ac)
+	{
+		nums[re] = 0;
+		re++;
+	}
+	j = 1;
+	while (j < ac)
+	{
+		num = ft_atoi(av[j]);
+		re = 0;
+		while (re < i)
+		{
+			if (nums[re] == num)
+			{
+				ft_printf("%sError\n%s", RED, END);
+				return (1);
+			}
+			re++;
+		}
+		nums[i] = num;
+		i++;
+		j++;
+	}
+	return (0);
 }

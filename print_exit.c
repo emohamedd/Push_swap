@@ -12,8 +12,8 @@
 
 #include "push_swap.h"
 
-void print(char *str)
+void	print(char *str)
 {
-    ft_printf("%s%s%s",RED, str, END);
-        exit(1);
-}   
+	ft_printf("%s%s%s", RED, str, END);
+	exit(1);
+}
