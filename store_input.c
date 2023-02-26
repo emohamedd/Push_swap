@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:54:42 by emohamed          #+#    #+#             */
-/*   Updated: 2023/02/25 12:13:22 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/02/26 19:56:37 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	push_number(int argc, char **argv, int *stack)
 
 	while (k < count)
 	{
-		// printf("%d\n", stack[k]);
+		printf("%d\n", stack[k]);
 		k++;
 	}
 	return (count);
@@ -50,13 +50,14 @@ void sa(int *stack, int size)
 int	main(int ac, char **av)
 {
 	int size = ac - 1;
-	int stack[size];
-	push_number(ac, av, stack);
-	sa(stack, size);
-	int i = 0;
-	while(i < size)
-	{
-		printf("%d ", stack[i]);
-		i++;
-	}
-}
+	int stack_a[size];
+	int stack_b[size];
+	push_number(ac, av, stack_a);
+	sa(stack_a, size);
+// 	int i = 0;
+// 	while(i < size)
+// 	{
+// 		printf("%d ", stack[i]);
+// 		i++;
+// 	}
+ }
