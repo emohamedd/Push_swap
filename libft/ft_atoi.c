@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 15:56:03 by emohamed         ###   ########.fr       */
+/*   Created: 2021/05/08 14:50:37 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/09 12:30:05 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
-#include <stdio.h>
-#include <limits.h>	
-#include <stdlib.h>
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	stock;
+	int	sign;
 
-typedef struct s_stack {
-  int *data;
-  int size;
-}t_stack;
-
-int ft_atoi_up(char *str);
-void err(void);
-int check_arg(t_stack *stack, int ac, char **av);
-
-#endif
+	i = 0;
+	stock = 0;
+	sign = 1;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	{
+		stock = (stock * 10) + (str[i] - '0');
+		i++;
+	}
+	return (sign * stock);
+}

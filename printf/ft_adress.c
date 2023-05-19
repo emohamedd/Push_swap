@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_adress.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 15:56:03 by emohamed         ###   ########.fr       */
+/*   Created: 2022/10/23 20:15:00 by emohamed          #+#    #+#             */
+/*   Updated: 2022/10/24 03:46:15 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
 #include <stdio.h>
-#include <limits.h>	
-#include <stdlib.h>
+#include <unistd.h>
+#include "ft_printf.h"
 
-typedef struct s_stack {
-  int *data;
-  int size;
-}t_stack;
+int	ft_adress(long long unsigned int n, char *b)
+{
+	int	cnt;
 
-int ft_atoi_up(char *str);
-void err(void);
-int check_arg(t_stack *stack, int ac, char **av);
-
-#endif
+	cnt = 0;
+	if (cnt >= 16)
+	{
+		cnt += ft_adress(n / 16, b);
+		cnt += ft_adress(n % 16, b);
+	}
+	else
+		cnt += ft_putchar(b[n]);
+	return (cnt);
+}

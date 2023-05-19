@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 15:56:03 by emohamed         ###   ########.fr       */
+/*   Created: 2022/10/23 21:48:17 by emohamed          #+#    #+#             */
+/*   Updated: 2022/10/25 09:58:31 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
-#include <stdio.h>
-#include <limits.h>	
-#include <stdlib.h>
+# include<stdio.h>
+# include <stdarg.h>
+# include <unistd.h>
 
-typedef struct s_stack {
-  int *data;
-  int size;
-}t_stack;
-
-int ft_atoi_up(char *str);
-void err(void);
-int check_arg(t_stack *stack, int ac, char **av);
+int	ft_putchar(char c);
+int	ft_putnbr(long int n);
+int	ft_putstr(char *ch);
+int	ft_printf(const char *str, ...);
+int	ft_putnbru(unsigned int nb);
+int	ft_hexa(unsigned long n, char*b);
+int	ft_adress(long long unsigned int n, char *b);
 
 #endif

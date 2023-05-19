@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 15:56:03 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/12 16:52:15 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/14 09:50:02 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
-#include <stdio.h>
-#include <limits.h>	
-#include <stdlib.h>
-
-typedef struct s_stack {
-  int *data;
-  int size;
-}t_stack;
-
-int ft_atoi_up(char *str);
-void err(void);
-int check_arg(t_stack *stack, int ac, char **av);
-
-#endif
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

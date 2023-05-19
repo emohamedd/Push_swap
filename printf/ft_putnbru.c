@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putnbru.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 15:56:03 by emohamed         ###   ########.fr       */
+/*   Created: 2022/10/23 22:24:05 by emohamed          #+#    #+#             */
+/*   Updated: 2022/10/24 03:53:07 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "ft_printf.h"
 
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
-#include <stdio.h>
-#include <limits.h>	
-#include <stdlib.h>
+int	ft_putnbru(unsigned int nb)
+{
+	int	c;
 
-typedef struct s_stack {
-  int *data;
-  int size;
-}t_stack;
-
-int ft_atoi_up(char *str);
-void err(void);
-int check_arg(t_stack *stack, int ac, char **av);
-
-#endif
+	c = 0;
+	c += ft_putnbr(nb);
+	return (c);
+}

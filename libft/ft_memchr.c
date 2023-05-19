@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 15:56:03 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/08 09:48:03 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/16 15:27:15 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
-#include <stdio.h>
-#include <limits.h>	
-#include <stdlib.h>
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*u;
 
-typedef struct s_stack {
-  int *data;
-  int size;
-}t_stack;
-
-int ft_atoi_up(char *str);
-void err(void);
-int check_arg(t_stack *stack, int ac, char **av);
-
-#endif
+	i = 0;
+	u = (unsigned char *)s;
+	while (i < n)
+	{
+		if (u[i] == (unsigned char)c)
+			return (&u[i]);
+		i++;
+	}
+	return (NULL);
+}

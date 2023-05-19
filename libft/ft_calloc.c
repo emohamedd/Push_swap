@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 15:56:03 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/09 12:38:12 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/14 09:46:28 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
-#include <stdio.h>
-#include <limits.h>	
-#include <stdlib.h>
+void	*ft_calloc(size_t count, size_t size)
+{
+	size_t	sizee;
+	void	*p;
+	size_t	i;
 
-typedef struct s_stack {
-  int *data;
-  int size;
-}t_stack;
-
-int ft_atoi_up(char *str);
-void err(void);
-int check_arg(t_stack *stack, int ac, char **av);
-
-#endif
+	p = NULL;
+	i = 0;
+	sizee = count * size;
+	p = malloc(sizee);
+	if (!p)
+		return (NULL);
+	ft_bzero(p, sizee);
+	return (p);
+}
+// int main()
+// {
+// 	char *str;
+// 			str = (char *)ft_calloc(30, 1);
+//     if (!str)
+//         write(1, "NULL", 4);
+//     else
+//         write(1, str, 30);
+// }

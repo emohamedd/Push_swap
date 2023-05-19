@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 15:56:03 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/05 20:04:01 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/14 09:49:44 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "libft.h"
+#include <string.h>
 
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
-#include <stdio.h>
-#include <limits.h>	
-#include <stdlib.h>
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char	*udest;
+	unsigned char	*usrc;
 
-typedef struct s_stack {
-  int *data;
-  int size;
-}t_stack;
-
-int ft_atoi_up(char *str);
-void err(void);
-int check_arg(t_stack *stack, int ac, char **av);
-
-#endif
+	if (!dst && !src)
+		return (NULL);
+	udest = (unsigned char *)dst;
+	usrc = (unsigned char *)src;
+	if (udest > usrc)
+	{
+		while (len--)
+			udest[len] = usrc[len];
+	}
+	else
+		ft_memcpy(dst, src, len);
+	return (dst);
+}
