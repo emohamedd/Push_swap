@@ -35,3 +35,4 @@ The following operations are allowed:
 * Both stacks start empty.
 * The goal is to sort `a` in ascending order and to have an empty `b`.
 
+
