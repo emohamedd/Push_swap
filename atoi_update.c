@@ -6,16 +6,16 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:55:20 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 19:30:18 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/20 16:05:06 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_atoi_up(char *str)
+long long  ft_atoi_up(char *str)
 {
-	int sign;
-	int result;
+	long long sign;
+	long long result;
 	int i;
 
 	result = 0;
