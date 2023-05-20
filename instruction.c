@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   instruction.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/20 16:42:18 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/20 16:29:50 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/20 16:42:14 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
-#include <stdio.h>
-#include <limits.h>	
-#include <stdlib.h>
-
-typedef struct s_stack {
-  int *data;
-  int size;
-}t_stack;
-
-long long ft_atoi_up(char *str);
-void err(void);
-int check_arg(t_stack *stack, char **av);
-char **linke(char **av);
-void sa(t_stack stack);
-
-#endif
+void sa(t_stack stack)
+{
+	int i = 0;
+	
+	i = stack.data[0];
+	stack.data[0] = stack.data[1];
+	stack.data[1] = i; 
+}
