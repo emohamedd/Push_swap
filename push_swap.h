@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 15:56:03 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/20 11:50:35 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack {
 
 int ft_atoi_up(char *str);
 void err(void);
-int check_arg(t_stack *stack, int ac, char **av);
+int check_arg(t_stack *stack, char **av);
+char **linke(char **av);
 
 #endif
