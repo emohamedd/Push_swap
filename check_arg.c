@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:42:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/20 11:50:29 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/21 14:15:02 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int check_arg(t_stack *stack, char **av)
 	while (av[i])
 		i++;
 	stack->size =  i;
+	// printf("%d\n", stack->size);
 	
 	stack->data = malloc(sizeof(int *) * stack->size);
 	if (!stack->data)
