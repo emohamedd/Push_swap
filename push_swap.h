@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/21 12:36:16 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:07:29 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ void err(void);
 int check_arg(t_stack *stack, char **av);
 char **linke(char **av);
 void sa(t_stack *stack);
+void sb(t_stack *stack);
+void ss(t_stack *stack);
 void pb(t_stack *stack);
+void pa(t_stack *stack);
 
 #endif
