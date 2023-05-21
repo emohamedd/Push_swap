@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/21 15:39:10 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/21 16:33:58 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ void pb(t_stack *stack);
 void pa(t_stack *stack);
 void ra(t_stack *stack);
 void rb(t_stack *stack);
+void rr(t_stack *stack);
+void rra(t_stack *stack);
+void rrb(t_stack *stack);
+void rrr(t_stack *stack);
 
 #endif

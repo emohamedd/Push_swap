@@ -1,53 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   the_r_instruction.c                                :+:      :+:    :+:   */
+/*   the_rr_instruction.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 15:26:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/21 15:51:18 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/21 16:26:04 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/21 16:33:38 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ra(t_stack *stack)
+void rra(t_stack *stack)
 {
-	int i = 0;
+	int i = stack->size;
 	int tmp;
+
 	if (stack->size > 1)
 	{
-		tmp = stack->data[0];
-		while (i < stack->size)
+		tmp = stack->data[stack->size - 1];
+		while (i > 0)
 		{
-			stack->data[i] = stack->data[i + 1];
-			i++;
+			stack->data[i] = stack->data[i - 1];
+			i--;
 		}
-		stack->data[stack->size - 1] = tmp;
-		write(2, "ra\n", 3);
+		stack->data[0] = tmp;
+		write(2, "rra\n", 3);
 	}
 }
-void rb(t_stack *stack)
+void rrb(t_stack *stack)
 {
-	int i = 0;
+	int i = stack->dsize;
 	int tmp;
+
 	if (stack->dsize > 1)
 	{
-		tmp = stack->dclone[0];
-		while (i < stack->dsize)
+		tmp = stack->dclone[stack->dsize - 1];
+		while (i > 0)
 		{
-			stack->dclone[i] = stack->dclone[i + 1];
-			i++;
+			stack->dclone[i] = stack->dclone[i - 1];
+			i--;
 		}
-		stack->dclone[stack->dsize - 1] = tmp;
-		write(2, "rb\n", 3);
+		stack->dclone[0] = tmp;
+		write(2, "rrb\n", 3);
 	}
 }
-void rr(t_stack *stack)
+void rrr(t_stack *stack)
 {
-	ra(stack);
-	rb(stack);
-	write(2, "rr\n", 3);
+	rra(stack);
+	rrb(stack);
+	write(2, "rrr\n", 3);
 
 }
