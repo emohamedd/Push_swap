@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:29:50 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/20 17:30:22 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/21 10:53:30 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,27 @@
 void sa(t_stack stack)
 {
 	int i = 0;
-	
+	if (!(stack.size > 1))
+		return;
 	i = stack.data[0];
 	stack.data[0] = stack.data[1];
 	stack.data[1] = i; 
 }
-int pb(t_stack stack)
+void sb(t_stack stack)
 {
-	int i = stack.size;
-	int *arr = stack.dclone;
-	
-	int j;
-	j = 0;
-	while (j < i)
-	{
-		arr[0] = stack.data[0];
-		j++;
-	}
-
+	int i = 0;
+	if (!(stack.size > 1))
+		return;
+	i = stack.dclone[0];
+	stack.dclone[0] = stack.dclone[1];
+	stack.dclone[1] = i; 
+}
+void pb(t_stack stack)
+{
+	if (stack.size == 0)
+		return;
+	if (stack.size - 1 == stack.size)
+		return;
+	stack.dclone[stack.size] = stack.data[stack.size - 1];
+    stack.size--;
 }
