@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/21 16:33:58 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/21 17:06:22 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ void rr(t_stack *stack);
 void rra(t_stack *stack);
 void rrb(t_stack *stack);
 void rrr(t_stack *stack);
+void sort_3(t_stack *stack);
 
 #endif

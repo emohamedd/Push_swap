@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:26:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/21 16:33:38 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/21 17:13:46 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void rrb(t_stack *stack)
 		write(2, "rrb\n", 3);
 	}
 }
-void rrr(t_stack *stack)
+void rrr(t_stack *stack)	
 {
 	rra(stack);
 	rrb(stack);

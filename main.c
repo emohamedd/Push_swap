@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/21 16:32:05 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/21 17:14:05 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int main(int ac , char **av)
 	// 	printf("%d\n", stack.data[i]);
 	// 	i++;
 	// }
-	rra(&stack);
+	// rra(&stack);
+	sort_3(&stack);
 	int i = 0;
 	printf("*------------stack A---------------*\n");
 	while (i < stack.size)
