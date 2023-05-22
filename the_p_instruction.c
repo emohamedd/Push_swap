@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:17:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/21 15:17:46 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:53:17 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ void pb(t_stack *stack)
 void pa(t_stack *stack)
 {
 	int i;
-	if (stack->size == 0)
-		stack->data[0] = stack->dclone[0];
+	if (stack->dsize == 0)
+		return;
+		// stack->data[0] = stack->dclone[0];
 	if (stack->size != 0)
 	{
 		i = stack->size;

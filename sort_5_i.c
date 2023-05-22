@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:07:02 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/22 15:53:59 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:51:46 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,7 @@ void sort_5(t_stack *stack)
 			ra(stack);
 	}
 	if (is_sorted(stack) == 0)
-	{
 		sort_3(stack);
-		pa(stack);
-		pa(stack);
-	}
-	else if (is_sorted(stack) == 1)
-	{
-		pa(stack);
-		pa(stack);
-	}
+	pa(stack);
+	pa(stack);
 }
