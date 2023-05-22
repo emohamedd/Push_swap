@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/22 11:24:48 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:38:18 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ void rrr(t_stack *stack);
 void sort_3(t_stack *stack);
 int min(t_stack *stack);
 int max(t_stack *stack);
-
+int is_sorted(t_stack *stack);
+void sort_5(t_stack *stack);
+int index_min(t_stack *stack, int min);
 #endif
