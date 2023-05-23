@@ -35,11 +35,13 @@ int main(int ac , char **av)
 	// 	i++;
 	// }
 	// rra(&stack);
+	if (is_sorted(&stack) == 0)
+		exit(0);
 	if (stack.size <= 3)
 		sort_3(&stack);
 	else if (stack.size <= 5)
 		sort_5(&stack);
-	// is_sorted(&stack);
+	is_sorted(&stack);
 		
 	int i = 0;
 	printf("\n*------------stack A---------------*\n");

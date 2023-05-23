@@ -37,7 +37,7 @@ void sort_5(t_stack *stack)
 		else if (mindex < stack->size / 2)
 			ra(stack);
 	}
-	if (is_sorted(stack) == 0)
+	if (is_sorted(stack) == 1)
 		sort_3(stack);
 	pa(stack);
 	pa(stack);
