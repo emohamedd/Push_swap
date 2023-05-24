@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/22 15:38:18 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/24 11:26:47 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_stack {
   int *data;
   int *dclone;
+  int *help_stack;
   int size;
   int dsize;
 }t_stack;
@@ -47,4 +48,7 @@ int max(t_stack *stack);
 int is_sorted(t_stack *stack);
 void sort_5(t_stack *stack);
 int index_min(t_stack *stack, int min);
+void push_a_to_cpy(t_stack *stack);
+void bb_sort(t_stack *stack);
+int int_indx(t_stack *stack , int i);
 #endif
