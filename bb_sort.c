@@ -6,16 +6,19 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 10:32:47 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/24 14:33:56 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/24 18:14:53 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push_a_to_cpy(t_stack *stack)
+void    push_a_to_cpy(t_stack *stack)
 {
     int i = 0;
 
+    stack->help_stack = malloc(stack->size * sizeof(int));
+	if (!stack->help_stack)
+		return ;
     while (i < stack->size)
     {
         stack->help_stack[i] = stack->data[i];

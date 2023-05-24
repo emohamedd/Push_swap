@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/24 15:22:07 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/24 18:15:33 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@ int main(int ac , char **av)
 	stack.dclone = malloc(stack.size * sizeof(int));
 	if (!stack.dclone)
 		return (0);
-	stack.help_stack = malloc(stack.size * sizeof(int));
-	if (!stack.help_stack)
-		return (0);
-	
 	if (check_arg(&stack, str) != 1)
 		err();
 
@@ -40,12 +36,12 @@ int main(int ac , char **av)
 	// 	sort_5(&stack);
 	// is_sorted(&stack);
 		
+	
+	int i = 0;
 	push_a_to_cpy(&stack);
 	bb_sort(&stack);
 	sort_100(&stack);
 	//  int_indx(&stack, 5);
-
-	int i = 0;
 	printf("\n*------------stack A---------------*\n");
 	while (i < stack.size)
 	{
