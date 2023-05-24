@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 14:33:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/24 14:33:40 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:22:57 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int int_indx(t_stack *stack , int i)
                index = j;
             j++;
         }
-        printf("the index is  %d" , index);
+        // printf("the index is  %d" , index);
         return (index);
         
 }

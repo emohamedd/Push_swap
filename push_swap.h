@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/24 11:26:47 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:21:41 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ int index_min(t_stack *stack, int min);
 void push_a_to_cpy(t_stack *stack);
 void bb_sort(t_stack *stack);
 int int_indx(t_stack *stack , int i);
+void sort_100(t_stack *stack);
 #endif

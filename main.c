@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/24 11:26:57 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/24 15:22:07 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@ int main(int ac , char **av)
 	// is_sorted(&stack);
 		
 	push_a_to_cpy(&stack);
-	// bb_sort(&stack);
-	 int_indx(&stack, 5);
+	bb_sort(&stack);
+	sort_100(&stack);
+	//  int_indx(&stack, 5);
 
 	int i = 0;
 	printf("\n*------------stack A---------------*\n");
