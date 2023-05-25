@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:17:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/22 16:53:17 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/25 19:01:30 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,35 @@
 void pb(t_stack *stack)
 {
 	int i;
-	if (stack->dsize == 0)
-		stack->dclone[0] = stack->data[0];
-	if (stack->dsize != 0)
+	stack->dsize++;
+	i = stack->dsize;
+	int tmp = stack->data[0];
+	while(i)
 	{
-		i = stack->dsize;
-		while(i > 0)
-		{
-			stack->dclone[i] = stack->dclone[i - 1];
-			i--;
-		}
-		stack->dclone[0] = stack->data[0];
+		stack->dclone[i] = stack->dclone[i - 1];
+		i--;
 	}
+	stack->dclone[0] = tmp;
 	i = 0;
-	while (i < stack->size)
+	int s = stack->size;
+	while (i < s)
 	{
 		stack->data[i] = stack->data[i + 1];
 		i++;
 	}
-    stack->size--;
-	stack->dsize++;
-	write(2, "pb\n", 3);
-	
+	stack->size--;
 }
+
 void pa(t_stack *stack)
 {
 	int i;
-	if (stack->dsize == 0)
-		return;
-		// stack->data[0] = stack->dclone[0];
-	if (stack->size != 0)
+	i = stack->size;
+	while(i > 0)
 	{
-		i = stack->size;
-		while(i > 0)
-		{
-			stack->data[i] = stack->data[i - 1];
-			i--;
-		}
-		stack->data[0] = stack->dclone[0];
+		stack->data[i] = stack->data[i - 1];
+		i--;
 	}
+	stack->data[0] = stack->dclone[0];
 	i = 0;
 	while (i < stack->dsize)
 	{

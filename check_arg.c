@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:42:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/21 14:15:02 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/25 18:58:17 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,18 @@ int check_arg(t_stack *stack, char **av)
 	int i;
 	int j;
 	
-	i = 0;
-	while (av[i])
+	i = 1;
+	int  o  = 0;
+	int c = 0;
+	while (av[i]) {
+		c = 0;
+		while (ft_split(av[i], ' ')[c]) {
+			c++;
+			o++;
+		}
 		i++;
-	stack->size =  i;
+	}
+	stack->size = o + 1;
 	// printf("%d\n", stack->size);
 	
 	stack->data = malloc(sizeof(int *) * stack->size);
