@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 11:54:25 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/26 11:55:54 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:13:43 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ void sort_500(t_stack *stack)
         else if (end < index)
             ra(stack);
     }
-}
 push_from_bta(stack);
+}
