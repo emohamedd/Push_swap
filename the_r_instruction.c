@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:26:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/21 15:51:18 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:32:20 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void ra(t_stack *stack)
 			i++;
 		}
 		stack->data[stack->size - 1] = tmp;
-		write(2, "ra\n", 3);
+		write(1, "ra\n", 3);
 	}
 }
 void rb(t_stack *stack)
@@ -41,13 +41,13 @@ void rb(t_stack *stack)
 			i++;
 		}
 		stack->dclone[stack->dsize - 1] = tmp;
-		write(2, "rb\n", 3);
+		write(1, "rb\n", 3);
 	}
 }
 void rr(t_stack *stack)
 {
 	ra(stack);
 	rb(stack);
-	write(2, "rr\n", 3);
+	write(1, "rr\n", 3);
 
 }

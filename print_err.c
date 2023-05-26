@@ -6,13 +6,13 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:12:54 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 13:20:38 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:33:07 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 void err(void)
 {
-	printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(1);
 }
