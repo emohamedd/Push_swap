@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/26 12:06:48 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:27:25 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ int main(int ac , char **av)
 	}
 		
 	
-	int i = 0;
+	// int i = 0;
 	// while();
 	//  int_indx(&stack, 5);
-	// i = 0;
+	int i = 0;
 	printf("\n*------------stack A---------------*\n");
 	while (i < stack.size)
 	{

@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:17:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/25 19:01:30 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:19:54 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void pb(t_stack *stack)
 		i++;
 	}
 	stack->size--;
+	write(2, "pb\n", 3);
 }
 
 void pa(t_stack *stack)
