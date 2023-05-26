@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/26 11:48:50 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:06:48 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,39 @@ int main(int ac , char **av)
 	if (check_arg(&stack, str) != 1)
 		err();
 	
-	// if (is_sorted(&stack) == 0)
-	// 	exit(0);
-	// if (stack.size <= 3)
-	// 	sort_3(&stack);
-	// else if (stack.size <= 5)
-	// 	sort_5(&stack);
-	// is_sorted(&stack);
+	if (is_sorted(&stack) == 0)
+		exit(0);
+	if (stack.size <= 3)
+		sort_3(&stack);
+	else if (stack.size <= 5)
+		sort_5(&stack);
+	else if (stack.size > 5 && stack.size <= 100)
+	{
+		push_a_to_cpy(&stack);
+		bb_sort(&stack);
+		sort_100(&stack);
+		push_from_bta(&stack);	
+	}
+	else if (stack.size > 100 && stack.size <= 500)
+		{
+		push_a_to_cpy(&stack);
+		bb_sort(&stack);
+		sort_500(&stack);
+		push_from_bta(&stack);	
+	}
 		
 	
-	// int i = 0;
-	push_a_to_cpy(&stack);
-	bb_sort(&stack);
-	sort_100(&stack);
-	push_from_bta(&stack);
+	int i = 0;
 	// while();
 	//  int_indx(&stack, 5);
 	// i = 0;
-	// printf("\n*------------stack A---------------*\n");
-	// while (i < stack.size)
-	// {
-	// 	printf(" %d\n", stack.data[i]);
-	// 	printf("---\n");
-	// 	i++;
-	// }
+	printf("\n*------------stack A---------------*\n");
+	while (i < stack.size)
+	{
+		printf(" %d\n", stack.data[i]);
+		printf("---\n");
+		i++;
+	}
 
 	// printf("\n*------------stack help---------------*\n");
 	// while (i < stack.size)

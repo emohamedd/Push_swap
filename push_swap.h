@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/26 11:40:18 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:04:15 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,5 @@ void sort_100(t_stack *stack);
 void push_from_bta(t_stack *stack);
 int max_dclone(t_stack *stack);
 int int_indx_dclone(t_stack *stack , int i);
+void sort_500(t_stack *stack);
 #endif
