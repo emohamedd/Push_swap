@@ -6,59 +6,66 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:37:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/26 11:56:14 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/27 12:55:24 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void sort_100(t_stack *stack)
 {
     int start = 0;
     int end = 15;
     int helpsize;
     
+    if (stack->size < end)
+        end = 5;
     helpsize = stack->size;
-    while (stack->size > 0)
+    while (stack->size)
     {
-        int index = int_indx(stack, stack->data[0]);
-        if (index >= start && index <= end)
+        if (stack->data[0] >= stack->help_stack[start] && stack->data[0] <= stack->help_stack[end])
         {
             pb(stack);
-            if (end < helpsize)
+            if (end < helpsize - 1)
             {
                 start++;
                 end++;
             }
         }
-        else if (index < start)
+        else if (stack->data[0] < stack->help_stack[start])
         {
             pb(stack);
             rb(stack);
-            if (end < helpsize)
+            if (end < helpsize - 1)
             {
                 start++;
                 end++;
             }
         }
-        else if (end < index)
+        else if (stack->data[0] > stack->help_stack[end])
             ra(stack);
     }
 }
 
 void push_from_bta(t_stack *stack)
 {
-    int max_b; 
     int imax_b;
-    while(stack->dsize > 0)
+    while(stack->dsize)
     {
-        max_b = max_dclone(stack);
-        imax_b  = int_indx_dclone(stack, max_b);
-
-        if (max_b == stack->dclone[0])
-            pa(stack);
-        else if (imax_b <= stack->dsize / 2)
-            rb(stack);
-        else if (imax_b > stack->dsize / 2)
-            rrb(stack);
+        imax_b  = int_indx_dclone(stack, max_dclone(stack));
+        if (imax_b >= stack->dsize / 2) {
+            int size = stack->dsize;
+            while (imax_b < size) {
+                rrb(stack);
+                size--;
+            }
+        }
+        else if (imax_b <= stack->dsize / 2) {
+            while (imax_b > 0) {
+                rb(stack);
+                imax_b--;
+            }
+        }
+        pa(stack);
     }
 }

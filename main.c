@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/26 21:17:51 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/27 12:54:02 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ int main(int ac , char **av)
 		sort_3(&stack);
 	else if (stack.size <= 5)
 		sort_5(&stack);
-	else if (stack.size > 5 && stack.size <= 100)
+	else if (stack.size <= 100)
 	{
 		push_a_to_cpy(&stack);
 		bb_sort(&stack);
 		sort_100(&stack);
 		push_from_bta(&stack);	
 	}
-	else if (stack.size > 100 && stack.size <= 500)
-		{
+	else if (stack.size > 100)
+	{
 		push_a_to_cpy(&stack);
 		bb_sort(&stack);
 		sort_500(&stack);
