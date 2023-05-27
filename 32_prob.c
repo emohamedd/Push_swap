@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   32_prob.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 23:42:41 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/27 13:08:03 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/27 13:02:40 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/27 14:30:03 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_isdigit(int c)
+void check_param(char **av)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+    int i = 0;
+    int j;
+
+    while (av[i])
+    {
+        j = 0;
+        while(av[i][j])
+        {
+            if ((av[i][j] == '-' || av[i][j] == '+') || av[i][j] == ' ')
+                err();
+            j++;
+        }
+        i++;
+    }
 }
