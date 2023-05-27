@@ -6,15 +6,18 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:07:02 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/26 17:24:30 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/27 16:04:03 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-int index_min(t_stack *stack, int min)
+
+int	index_min(t_stack *stack, int min)
 {
-	int i = 0;
-	while(i < stack->size)
+	int	i;
+
+	i = 0;
+	while (i < stack->size)
 	{
 		if (stack->data[i] == min)
 			return (i);
@@ -22,11 +25,13 @@ int index_min(t_stack *stack, int min)
 	}
 	return (-1);
 }
-void sort_5(t_stack *stack)
+
+void	sort_5(t_stack *stack)
 {
-	int mindex;
-	int mine;
-	while(stack->size != 3)
+	int	mindex;
+	int	mine;
+
+	while (stack->size != 3)
 	{
 		mine = min(stack);
 		mindex = index_min(stack, mine);

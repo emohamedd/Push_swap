@@ -12,17 +12,22 @@
 
 #include "push_swap.h"
 
-char **linke(char **av)
+char	**linke(char **av)
 {
-	int i = 0;
-	char *s = "";
+	int		i;
+	char	*s;
+	char	*str;
+	char	**store;
+
+	i = 0;
+	s = "";
 	while (av[i])
 	{
-		char *str = ft_strtrim(av[i], " ");
+		str = ft_strtrim(av[i], " ");
 		s = ft_strjoin(s, str);
 		s = ft_strjoin(s, " ");
 		i++;
 	}
-	char **store = ft_split(s, ' ');
+	store = ft_split(s, ' ');
 	return (store);
 }

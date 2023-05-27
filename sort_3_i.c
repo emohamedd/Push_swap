@@ -6,15 +6,15 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:57:21 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/22 17:00:15 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/27 16:10:09 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_3(t_stack *stack)
+void	sort_3(t_stack *stack)
 {
-	if (stack->data[0]  == max(stack) &&  stack->data[2] == min(stack))
+	if (stack->data[0] == max(stack) && stack->data[2] == min(stack))
 	{
 		sa(stack);
 		rra(stack);
@@ -23,7 +23,7 @@ void sort_3(t_stack *stack)
 		rra(stack);
 	else if (stack->data[0] == max(stack) && stack->data[1] == min(stack))
 		ra(stack);
-	else if (stack->data[1]  == min(stack) && stack->data[2] == max(stack))
+	else if (stack->data[1] == min(stack) && stack->data[2] == max(stack))
 		sa(stack);
 	else if (stack->data[0] == min(stack) && stack->data[1] == max(stack))
 	{
@@ -31,5 +31,5 @@ void sort_3(t_stack *stack)
 		sa(stack);
 	}
 	else
-		return;
+		return ;
 }

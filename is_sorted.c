@@ -12,9 +12,11 @@
 
 #include "push_swap.h"
 
-int is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (i < stack->size - 1)
 	{
 		if (stack->data[i] > stack->data[i + 1])

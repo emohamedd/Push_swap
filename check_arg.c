@@ -6,31 +6,33 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:42:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/27 14:53:01 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/27 16:12:08 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_arg(t_stack *stack, char **av)
+int	check_arg(t_stack *stack, char **av)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+	int	o;
+	int	c;
+
 	i = 1;
-	int  o  = 0;
-	int c = 0;
-	while (av[i]) {
+	o = 0;
+	c = 0;
+	while (av[i])
+	{
 		c = 0;
-		while (ft_split(av[i], ' ')[c]) {
+		while (ft_split(av[i], ' ')[c])
+		{
 			c++;
 			o++;
 		}
 		i++;
 	}
 	stack->size = o + 1;
-	// printf("%d\n", stack->size);
-	
 	stack->data = malloc(sizeof(int *) * stack->size);
 	if (!stack->data)
 		return (0);
@@ -41,12 +43,12 @@ int check_arg(t_stack *stack, char **av)
 		i++;
 	}
 	i = 0;
-	while(i < stack->size)
+	while (i < stack->size)
 	{
 		j = i + 1;
-		while(j < stack->size)
+		while (j < stack->size)
 		{
-			if(stack->data[i] == stack->data[j])
+			if (stack->data[i] == stack->data[j])
 			{
 				err();
 			}

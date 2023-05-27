@@ -6,16 +6,18 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:26:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/26 21:32:20 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/27 16:04:21 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ra(t_stack *stack)
+void	ra(t_stack *stack)
 {
-	int i = 0;
-	int tmp;
+	int	i;
+	int	tmp;
+
+	i = 0;
 	if (stack->size > 1)
 	{
 		tmp = stack->data[0];
@@ -28,10 +30,13 @@ void ra(t_stack *stack)
 		write(1, "ra\n", 3);
 	}
 }
-void rb(t_stack *stack)
+
+void	rb(t_stack *stack)
 {
-	int i = 0;
-	int tmp;
+	int	i;
+	int	tmp;
+
+	i = 0;
 	if (stack->dsize > 1)
 	{
 		tmp = stack->dclone[0];
@@ -44,10 +49,10 @@ void rb(t_stack *stack)
 		write(1, "rb\n", 3);
 	}
 }
-void rr(t_stack *stack)
+
+void	rr(t_stack *stack)
 {
 	ra(stack);
 	rb(stack);
 	write(1, "rr\n", 3);
-
 }
