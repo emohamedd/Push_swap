@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:55:20 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/20 16:30:53 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/27 14:50:52 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ long long  ft_atoi_up(char *str)
 			if ((sign * result) > INT_MAX ||  (sign * result) < INT_MIN)
 				err();
 		}
-		else
+		else if (!(str[i] >= '0' && str[i] <= '9'))
 			err();
+				// printf("wa ana\n");
 		i++;
 	}
 	return (sign * result);
