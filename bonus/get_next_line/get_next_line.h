@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:42:58 by emohamed          #+#    #+#             */
-/*   Updated: 2022/12/11 11:34:40 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/27 23:42:45 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoinn(char *s1, char *s2);
 char	*new_get_exact_line(char *line);
 char	*new_get_line(char *str, int fd);
-int		ft_strlen(char *s);
+int		ft_strlenn(char *s);
 int		check_str(char *buff);
-char	*ft_strchr(char *string, char chrstr);
+char	*ft_strchrr(char *string, char chrstr);
 #endif

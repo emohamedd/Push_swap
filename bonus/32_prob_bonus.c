@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   link.c                                             :+:      :+:    :+:   */
+/*   32_prob_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 19:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/27 23:32:13 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/27 13:02:40 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/28 00:29:04 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <string.h>
-char	**linke(char **av)
+#include "push_swap_bonus.h"
+
+void	check_param(char **av)
 {
-	int		i;
-	char	*s;
-	char	*str;
-	char	**store;
+	int	i;
+	int	j;
 
 	i = 0;
-	s = "";
 	while (av[i])
 	{
-		s = ft_strjoin(s, " ");
-		str = ft_strtrim(av[i], " ");
-		s = ft_strjoin(s, str);
+		j = 0;
+		while (av[i][j])
+		{
+			if (((av[i][j] == '-' && av[i][1] == '\0') || (av[i][j] == '+'
+						&& av[i][1] == '\0')) || av[i][j] == ' ')
+				err();
+			j++;
+		}
 		i++;
 	}
-	store = ft_split(s, ' ');
-	return (store);
 }

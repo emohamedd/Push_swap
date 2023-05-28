@@ -6,13 +6,13 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:26:28 by emohamed          #+#    #+#             */
-/*   Updated: 2022/12/11 16:03:22 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/27 23:42:44 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(char *s)
+int	ft_strlenn(char *s)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoinn(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
@@ -51,7 +51,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (ptr);
 }
 
-char	*ft_strchr(char *string, char chrstr)
+char	*ft_strchrr(char *string, char chrstr)
 {
 	int		i;
 	int		j;

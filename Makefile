@@ -6,13 +6,13 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 10:36:31 by emohamed          #+#    #+#              #
-#    Updated: 2023/05/27 16:42:48 by emohamed         ###   ########.fr        #
+#    Updated: 2023/05/28 00:10:38 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-SRCS = $(wildcard *.c)
+SRCS = $(wildcard *.c) bonus/*.c
 SRCS_BONUS = 
 OBJS = $(SRCS:.c=.o)
 

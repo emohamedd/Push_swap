@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   link.c                                             :+:      :+:    :+:   */
+/*   is_sorted_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 19:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/27 23:32:13 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/22 15:33:25 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/28 00:28:56 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <string.h>
-char	**linke(char **av)
+#include "push_swap_bonus.h"
+
+int	is_sorted(t_stack *stack)
 {
-	int		i;
-	char	*s;
-	char	*str;
-	char	**store;
+	int	i;
 
 	i = 0;
-	s = "";
-	while (av[i])
+	while (i < stack->size - 1)
 	{
-		s = ft_strjoin(s, " ");
-		str = ft_strtrim(av[i], " ");
-		s = ft_strjoin(s, str);
+		if (stack->data[i] > stack->data[i + 1])
+			return (1);
 		i++;
 	}
-	store = ft_split(s, ' ');
-	return (store);
+	return (0);
 }

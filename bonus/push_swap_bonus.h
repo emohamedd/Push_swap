@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/28 00:37:22 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/28 01:03:17 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 // -----Libs-----//
-# include "libft/libft.h"
+# include "get_next_line/get_next_line.h"
+# include "../libft/libft.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -65,5 +66,7 @@ int			int_indx(t_stack *stack, int i);
 int			int_indx_dclone(t_stack *stack, int i);
 // -----Err handler-----//
 void		err(void);
+// -----Bonus Part----//
+void cmp(char *str, t_stack *stack);
 
 #endif
