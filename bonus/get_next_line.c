@@ -6,11 +6,11 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:44:20 by emohamed          #+#    #+#             */
-/*   Updated: 2022/12/11 15:58:07 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/28 15:34:17 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "push_swap_bonus.h"
 
 int	check_str(char *buff)
 {
@@ -32,6 +32,8 @@ char	*new_get_line(char *str, int fd)
 	char	*buff;
 
 	buff = malloc(BUFFER_SIZE + 1);
+	if (!buff)
+		return (NULL);
 	while (1)
 	{
 		r = read(fd, buff, BUFFER_SIZE);
@@ -44,7 +46,7 @@ char	*new_get_line(char *str, int fd)
 			return (NULL);
 		}
 		buff[r] = '\0';
-		str = ft_strjoin(str, buff);
+		str = ft_strjoinn(str, buff);
 		if (check_str(str) == 1)
 			break ;
 	}
@@ -86,14 +88,14 @@ char	*get_next_line(int fd)
 	char		*line;
 	char		*p;
 
-	if (fd == -1 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	save = new_get_line(save, fd);
 	p = save;
 	line = new_get_exact_line(save);
 	if (!line)
 		return (NULL);
-	save = ft_strchr(save, '\n');
+	save = ft_strchrr(save, '\n');
 	free(p);
 	return (line);
 }

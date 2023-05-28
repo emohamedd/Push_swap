@@ -6,11 +6,11 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:26:28 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/27 23:42:44 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/28 15:37:03 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "push_swap_bonus.h"
 
 int	ft_strlenn(char *s)
 {
@@ -26,6 +26,7 @@ int	ft_strlenn(char *s)
 	return (i);
 }
 
+
 char	*ft_strjoinn(char *s1, char *s2)
 {
 	size_t	i;
@@ -33,10 +34,10 @@ char	*ft_strjoinn(char *s1, char *s2)
 	char	*ptr;
 	size_t	k;
 
-	k = ft_strlen(s1);
+	k = ft_strlenn(s1);
 	i = 0;
 	j = 0;
-	ptr = malloc(sizeof(char) * (k + ft_strlen(s2) + 1));
+	ptr = malloc(sizeof(char) * (k + ft_strlenn(s2) + 1));
 	if (!ptr)
 		return (NULL);
 	while (s1 && i < k)
@@ -44,14 +45,14 @@ char	*ft_strjoinn(char *s1, char *s2)
 		ptr[i] = s1[i];
 		i++;
 	}
-	while (s2 && i < ft_strlen(s2) + k)
+	while (s2 && i < ft_strlenn(s2) + k)
 		ptr[i++] = s2[j++];
 	ptr[i] = '\0';
 	free(s1);
 	return (ptr);
 }
 
-char	*ft_strchrr(char *string, char chrstr)
+char	*ft_strchrr(char *string, char nl)
 {
 	int		i;
 	int		j;
@@ -59,19 +60,19 @@ char	*ft_strchrr(char *string, char chrstr)
 
 	i = 0;
 	j = 0;
-	while (string[i] != chrstr)
+	while (string[i] != nl)
 	{
 		if (string[i] == '\0')
 			return (0);
 		i++;
 	}
-	if (!string[i] || (string[i] == chrstr && string[i + 1] == '\0'))
+	if (!string[i] || (string[i] == nl && string[i + 1] == '\0'))
 		return (NULL);
-	save = malloc(sizeof(char) * ((ft_strlen(string) - i) + 1));
+	save = malloc(sizeof(char) * ((ft_strlenn(string) - i) + 1));
 	if (!save)
 		return (NULL);
 	i++;
-	while (i < ft_strlen(string))
+	while (i < (int) ft_strlenn(string))
 		save[j++] = string[i++];
 	save[j] = '\0';
 	return (save);

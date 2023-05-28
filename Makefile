@@ -6,36 +6,49 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 10:36:31 by emohamed          #+#    #+#              #
-#    Updated: 2023/05/28 00:10:38 by emohamed         ###   ########.fr        #
+#    Updated: 2023/05/28 14:59:16 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-SRCS = $(wildcard *.c) bonus/*.c
-SRCS_BONUS = 
-OBJS = $(SRCS:.c=.o)
 
 NAME = push_swap
 NAME_BONUS = checker
 
-all : $(NAME)
+SRCS = 32_prob.c atoi_update.c bb_sort.c check_arg.c get_the_index.c\
+is_sorted.c link.c main.c min_max.c print_err.c sort_100_range.c sort_3_i.c\
+sort_500_range.c sort_5_i.c the_p_instruction.c the_r_instruction.c the_rr_instruction.c the_s_instruction.c
+OBJS = $(SRCS:.c=.o)
+
+SRCS_BONUS = $(wildcard bonus/*.c)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+
+
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $^
+	$(CC) $(CFLAGS) -c $^ -o $@
+
+
+all : $(NAME)
+
 
 $(NAME): $(OBJS) 
 	make -C libft/ all
 	$(CC) $(CFLAGS) $^ libft/libft.a  -o $@ 
 
+$(NAME_BONUS): $(OBJS_BONUS)
+	make -C libft/ all
+	$(CC) $(CFLAGS) $^ libft/libft.a  -o $@ 
+
 clean:
 	make -C libft/ clean
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	make -C libft/ fclean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME_BONUS)
 
 re: fclean all
 
-bonus: $(CC)  $(CFLAGS) $(SRCS_BONUS) -o $(NAME_BONUS)
+bonus: $(NAME_BONUS)

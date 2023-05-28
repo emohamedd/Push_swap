@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   print_err_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 11:42:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/27 23:42:45 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/19 13:12:54 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/28 15:15:33 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
+#include "push_swap_bonus.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_strjoinn(char *s1, char *s2);
-char	*new_get_exact_line(char *line);
-char	*new_get_line(char *str, int fd);
-int		ft_strlenn(char *s);
-int		check_str(char *buff);
-char	*ft_strchrr(char *string, char chrstr);
-#endif
+void	err(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}

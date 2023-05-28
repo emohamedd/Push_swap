@@ -6,19 +6,24 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/28 01:03:17 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/28 15:36:26 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
 // -----Libs-----//
-# include "get_next_line/get_next_line.h"
 # include "../libft/libft.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
+
 
 // -----My Struct-----//
 typedef struct s_stack
@@ -54,6 +59,7 @@ long long	ft_atoi_up(char *str);
 int			check_arg(t_stack *stack, char **av);
 char		**linke(char **av);
 void		check_param(char **av);
+long long	ft_atoi_up(char *str);
 // -----Stack Play-----//
 void		push_a_to_cpy(t_stack *stack);
 void		push_from_bta(t_stack *stack);
@@ -66,7 +72,14 @@ int			int_indx(t_stack *stack, int i);
 int			int_indx_dclone(t_stack *stack, int i);
 // -----Err handler-----//
 void		err(void);
-// -----Bonus Part----//
 void cmp(char *str, t_stack *stack);
 
+// -----Get next line-----//
+char	*get_next_line(int fd);
+char	*ft_strjoinn(char *s1, char *s2);
+char	*new_get_exact_line(char *line);
+char	*new_get_line(char *str, int fd);
+int		ft_strlenn(char *s);
+int		check_str(char *buff);
+char	*ft_strchrr(char *string, char chrstr);
 #endif
