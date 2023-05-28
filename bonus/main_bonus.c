@@ -16,8 +16,8 @@ int	main(int ac, char **av)
 {
 	t_stack	stack;
 	char	**str;
-	char *store_line;
-	
+	char	*store_line;
+
 	if (ac == 1)
 		return (0);
 	str = linke(av + 1);
@@ -29,9 +29,7 @@ int	main(int ac, char **av)
 		return (0);
 	if (check_arg(&stack, str) != 1)
 		err();
-		
-	
-	while(1)
+	while (1)
 	{
 		store_line = get_next_line(0);
 		if (!store_line)
@@ -40,7 +38,7 @@ int	main(int ac, char **av)
 				write(1, "OK\n", 3);
 			else
 				write(1, "KO\n", 3);
-			break;
+			break ;
 		}
 		cmp(store_line, &stack);
 	}

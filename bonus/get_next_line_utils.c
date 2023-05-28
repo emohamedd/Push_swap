@@ -26,7 +26,6 @@ int	ft_strlenn(char *s)
 	return (i);
 }
 
-
 char	*ft_strjoinn(char *s1, char *s2)
 {
 	size_t	i;
@@ -72,7 +71,7 @@ char	*ft_strchrr(char *string, char nl)
 	if (!save)
 		return (NULL);
 	i++;
-	while (i < (int) ft_strlenn(string))
+	while (i < (int)ft_strlenn(string))
 		save[j++] = string[i++];
 	save[j] = '\0';
 	return (save);

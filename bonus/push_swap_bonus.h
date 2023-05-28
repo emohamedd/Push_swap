@@ -24,7 +24,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-
 // -----My Struct-----//
 typedef struct s_stack
 {
@@ -72,14 +71,14 @@ int			int_indx(t_stack *stack, int i);
 int			int_indx_dclone(t_stack *stack, int i);
 // -----Err handler-----//
 void		err(void);
-void cmp(char *str, t_stack *stack);
+void		cmp(char *str, t_stack *stack);
 
 // -----Get next line-----//
-char	*get_next_line(int fd);
-char	*ft_strjoinn(char *s1, char *s2);
-char	*new_get_exact_line(char *line);
-char	*new_get_line(char *str, int fd);
-int		ft_strlenn(char *s);
-int		check_str(char *buff);
-char	*ft_strchrr(char *string, char chrstr);
+char		*get_next_line(int fd);
+char		*ft_strjoinn(char *s1, char *s2);
+char		*new_get_exact_line(char *line);
+char		*new_get_line(char *str, int fd);
+int			ft_strlenn(char *s);
+int			check_str(char *buff);
+char		*ft_strchrr(char *string, char chrstr);
 #endif

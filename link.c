@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 #include <string.h>
+
 char	**linke(char **av)
 {
 	int		i;
