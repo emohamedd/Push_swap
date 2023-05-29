@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 12:47:21 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/19 19:57:38 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/29 10:49:06 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_char(char const c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char  *s1, char  *set)
 {
 	int	begin;
 	int	end;
@@ -41,4 +41,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end >= begin && check_char(s1[end], set))
 		end--;
 	return (ft_substr(s1, begin, end - begin + 1));
+	free(s1);
 }
