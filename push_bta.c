@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   push_bta.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 11:59:19 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/29 22:27:13 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/29 22:43:14 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/29 22:54:11 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+void	push_from_bta(t_stack *stack)
 {
-	int		i;
-	int		j;
-	int		size;
-	char	*p;
+	int	imax_b;
+	int	size;
 
-	i = 0;
-	j = 0;
-	if (!s1)
-		s1 = ft_strdup("");
-	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	p = malloc(sizeof(char) * size);
-	while (s1[i])
+	while (stack->dsize)
 	{
-		p[i] = s1[i];
-		i++;
+		imax_b = int_indx_dclone(stack, max_dclone(stack));
+		if (imax_b >= stack->dsize / 2)
+		{
+			size = stack->dsize;
+			while (imax_b < size)
+			{
+				rrb(stack);
+				size--;
+			}
+		}
+		else if (imax_b <= stack->dsize / 2)
+		{
+			while (imax_b > 0)
+			{
+				rb(stack);
+				imax_b--;
+			}
+		}
+		pa(stack);
 	}
-	while (s2[j])
-	{
-		p[i + j] = s2[j];
-		j++;
-	}
-	p[i + j] = '\0';
-	free(s1);
-	return (p);
 }

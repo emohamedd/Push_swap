@@ -6,7 +6,7 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 10:36:31 by emohamed          #+#    #+#              #
-#    Updated: 2023/05/29 11:37:49 by emohamed         ###   ########.fr        #
+#    Updated: 2023/05/29 22:40:38 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 NAME = push_swap
 NAME_BONUS = checker
 
-SRCS = 32_prob.c atoi_update.c bb_sort.c check_arg.c get_the_index.c\
-is_sorted.c link.c main.c min_max.c print_err.c sort_100_range.c sort_3_i.c\
-sort_500_range.c sort_5_i.c the_p_instruction.c the_r_instruction.c the_rr_instruction.c the_s_instruction.c leaks_killer.c
+SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 
 SRCS_BONUS = $(wildcard bonus/*.c)
