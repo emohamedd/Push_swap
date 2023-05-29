@@ -6,39 +6,41 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:42:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/29 11:41:36 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/29 21:28:11 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-
-
 int	check_arg(t_stack *stack, char **av)
 {
-	int	i;
-	int	j;
-	int	o;
-	int	c;
-	char **args;
+	int		i;
+	int		j;
+	int		o;
+	int		c;
+	char	**ptr;
 
-	i = 1;
+	i = 0;
 	o = 0;
 	c = 0;
 	while (av[i])
 	{
 		c = 0;
-		args = ft_split(av[i], ' ');
-		while (args[c])
+		ptr = ft_split(av[i], ' ');
+		if (!ptr)
+			return (1);
+		while (ptr[c])
 		{
+			free(ptr[c]);
 			c++;
 			o++;
 		}
-		free_array(args);
+		free(ptr);
 		i++;
 	}
-	stack->size = o + 1;
+	stack->size = o;
 	stack->data = malloc(sizeof(int *) * stack->size);
+	stack->dclone = malloc(stack->size * sizeof(int *));
 	if (!stack->data)
 		return (0);
 	i = 0;
@@ -47,7 +49,6 @@ int	check_arg(t_stack *stack, char **av)
 		stack->data[i] = ft_atoi_up(av[i]);
 		i++;
 	}
-	free_array(av);
 	i = 0;
 	while (i < stack->size)
 	{
@@ -55,7 +56,9 @@ int	check_arg(t_stack *stack, char **av)
 		while (j < stack->size)
 		{
 			if (stack->data[i] == stack->data[j])
+			{
 				err();
+			}
 			j++;
 		}
 		i++;

@@ -14,11 +14,11 @@
 
 int	check_arg(t_stack *stack, char **av)
 {
-	int	i;
-	int	j;
-	int	o;
-	int	c;
-	char **ptr;
+	int		i;
+	int		j;
+	int		o;
+	int		c;
+	char	**ptr;
 
 	i = 0;
 	o = 0;
@@ -28,7 +28,7 @@ int	check_arg(t_stack *stack, char **av)
 		c = 0;
 		ptr = ft_split(av[i], ' ');
 		if (!ptr)
-			return 1;
+			return (1);
 		while (ptr[c])
 		{
 			free(ptr[c]);

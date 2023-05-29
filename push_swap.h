@@ -66,9 +66,7 @@ int			int_indx_dclone(t_stack *stack, int i);
 // -----Err handler-----//
 void		err(void);
 // -----leaks solver-----//
-void free_array(char **str);
-int count_args(char **av);
-
-
+void		free_array(char **str);
+int			count_args(char **av);
 
 #endif

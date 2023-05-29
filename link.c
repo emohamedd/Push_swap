@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 19:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/29 20:39:27 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/29 21:36:21 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ char	**linke(char **av)
 		s = ft_strjoin(s, " ");
 		i++;
 	}
-	store = ft_split(s, ' '); 
+	store = ft_split(s, ' ');
 	free(s);
-	// while(1);
 	return (store);
 }

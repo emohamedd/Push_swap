@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:37:04 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/28 15:41:11 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/29 21:32:21 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ int	main(int ac, char **av)
 		return (0);
 	str = linke(av + 1);
 	check_param(str);
-	stack.data = malloc(sizeof(int *) * stack.size);
-	stack.dclone = malloc(stack.size * sizeof(int *));
 	stack.dsize = 0;
-	if (!stack.dclone)
-		return (0);
 	if (check_arg(&stack, str) != 1)
 		err();
 	while (1)

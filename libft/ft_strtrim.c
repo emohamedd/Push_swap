@@ -26,7 +26,7 @@ int	check_char(char const c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char  *s1, char  *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	int	begin;
 	int	end;
