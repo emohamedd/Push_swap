@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/28 00:37:22 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/29 15:20:53 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,10 @@ int			int_indx(t_stack *stack, int i);
 int			int_indx_dclone(t_stack *stack, int i);
 // -----Err handler-----//
 void		err(void);
+// -----leaks solver-----//
+void free_array(char **str);
+int count_args(char **av);
+
+
 
 #endif

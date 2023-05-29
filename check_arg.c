@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:42:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/27 23:18:13 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/29 20:32:13 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,29 @@ int	check_arg(t_stack *stack, char **av)
 	int	j;
 	int	o;
 	int	c;
+	char **ptr;
 
-	i = 1;
+	i = 0;
 	o = 0;
 	c = 0;
 	while (av[i])
 	{
 		c = 0;
-		while (ft_split(av[i], ' ')[c])
+		ptr = ft_split(av[i], ' ');
+		if (!ptr)
+			return 1;
+		while (ptr[c])
 		{
+			free(ptr[c]);
 			c++;
 			o++;
 		}
+		free(ptr);
 		i++;
 	}
-	stack->size = o + 1;
+	stack->size = o;
 	stack->data = malloc(sizeof(int *) * stack->size);
+	stack->dclone = malloc(stack->size * sizeof(int *));
 	if (!stack->data)
 		return (0);
 	i = 0;

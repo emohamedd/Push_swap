@@ -6,11 +6,13 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:42:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/28 00:29:00 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/29 11:41:36 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+
+
 
 int	check_arg(t_stack *stack, char **av)
 {
@@ -18,6 +20,7 @@ int	check_arg(t_stack *stack, char **av)
 	int	j;
 	int	o;
 	int	c;
+	char **args;
 
 	i = 1;
 	o = 0;
@@ -25,11 +28,13 @@ int	check_arg(t_stack *stack, char **av)
 	while (av[i])
 	{
 		c = 0;
-		while (ft_split(av[i], ' ')[c])
+		args = ft_split(av[i], ' ');
+		while (args[c])
 		{
 			c++;
 			o++;
 		}
+		free_array(args);
 		i++;
 	}
 	stack->size = o + 1;
@@ -42,6 +47,7 @@ int	check_arg(t_stack *stack, char **av)
 		stack->data[i] = ft_atoi_up(av[i]);
 		i++;
 	}
+	free_array(av);
 	i = 0;
 	while (i < stack->size)
 	{
@@ -49,9 +55,7 @@ int	check_arg(t_stack *stack, char **av)
 		while (j < stack->size)
 		{
 			if (stack->data[i] == stack->data[j])
-			{
 				err();
-			}
 			j++;
 		}
 		i++;
