@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:33:25 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/28 15:39:34 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/30 22:02:29 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	is_sorted(t_stack *stack)
 	while (i < stack->size - 1)
 	{
 		if (stack->data[i] > stack->data[i + 1])
-			return (0);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
