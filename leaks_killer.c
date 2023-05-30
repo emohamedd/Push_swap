@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 11:35:41 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/29 20:18:55 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/30 02:58:12 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,11 @@ void	free_array(char **str)
 		i++;
 	}
 	free(str);
+}
+
+void	free_stack(t_stack *stack)
+{
+	free(stack->data);
+	free(stack->dclone);
+	free(stack->help_stack);
 }

@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_500_range.c                                   :+:      :+:    :+:   */
+/*   push_toc_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 11:54:25 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/30 02:28:45 by emohamed         ###   ########.fr       */
+/*   Created: 2023/05/30 02:45:27 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/30 02:58:08 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_500(t_stack *stack)
+void	pa_to_cpy(t_stack *stack)
 {
-	int	start;
-	int	end;
-
-	start = 0;
-	end = 35;
-	push_to_b_stack(stack, start, end);
-	push_from_bta(stack);
+	push_a_to_cpy(stack);
+	bb_sort(stack);
 }

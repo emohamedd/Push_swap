@@ -6,22 +6,27 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:37:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/29 23:05:31 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/30 06:36:49 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_100(t_stack *stack)
+void	pb_rb(t_stack *stack, int start, int end)
 {
-	int	start;
-	int	end;
+	pb(stack);
+	rb(stack);
+	if (end < stack->size - 1)
+	{
+		(start)++;
+		(end)++;
+	}
+}
+
+void	push_to_b_stack(t_stack *stack, int start, int end)
+{
 	int	helpsize;
 
-	start = 0;
-	end = 15;
-	if (stack->size < end)
-		end = 5;
 	helpsize = stack->size;
 	while (stack->size)
 	{
@@ -37,16 +42,26 @@ void	sort_100(t_stack *stack)
 		}
 		else if (stack->data[0] < stack->help_stack[start])
 		{
-			pb(stack);
-			rb(stack);
-			if (end < helpsize - 1)
-			{
-				start++;
-				end++;
-			}
+			pb_rb(stack, start, end);
 		}
 		else if (stack->data[0] > stack->help_stack[end])
+		{
 			ra(stack);
+		}
 	}
+}
+
+void	sort_100(t_stack *stack)
+{
+	int	start;
+	int	end;
+
+	start = 0;
+	end = 15;
+	if (stack->size < end)
+	{
+		end = 5;
+	}
+	push_to_b_stack(stack, start, end);
 	push_from_bta(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:36:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/29 22:39:39 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/30 06:36:45 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void		sort_5(t_stack *stack);
 void		sort_100(t_stack *stack);
 void		sort_500(t_stack *stack);
 void		bb_sort(t_stack *stack);
+void		the_100_or_the_500(t_stack *stack);
 // -----Check Arg-----//
 long long	ft_atoi_up(char *str);
 int			check_arg(t_stack *stack, char **av);
@@ -56,6 +57,8 @@ void		check_param(char **av);
 // -----Stack Play-----//
 void		push_a_to_cpy(t_stack *stack);
 void		push_from_bta(t_stack *stack);
+void		push_to_b_stack(t_stack *stack, int start, int end);
+void		pa_to_cpy(t_stack *stack);
 // -----The Indexing-----//
 int			max(t_stack *stack);
 int			max_dclone(t_stack *stack);
@@ -67,9 +70,6 @@ int			int_indx_dclone(t_stack *stack, int i);
 void		err(void);
 // -----leaks solver-----//
 void		free_array(char **str);
-// -----process case-----//
-void		process_case1(t_stack *stack, int *start, int *end, int helpsize);
-void		process_case2(t_stack *stack, int *start, int *end, int helpsize);
-void		process_case3(t_stack *stack, int *start, int *end);
+void		free_stack(t_stack *stack);
 
 #endif

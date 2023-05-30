@@ -6,16 +6,15 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:42:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/29 21:28:11 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/30 06:03:35 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	check_arg(t_stack *stack, char **av)
+void	allocat_to_stack(t_stack *stack, char **av)
 {
 	int		i;
-	int		j;
 	int		o;
 	int		c;
 	char	**ptr;
@@ -27,8 +26,6 @@ int	check_arg(t_stack *stack, char **av)
 	{
 		c = 0;
 		ptr = ft_split(av[i], ' ');
-		if (!ptr)
-			return (1);
 		while (ptr[c])
 		{
 			free(ptr[c]);
@@ -39,16 +36,27 @@ int	check_arg(t_stack *stack, char **av)
 		i++;
 	}
 	stack->size = o;
-	stack->data = malloc(sizeof(int *) * stack->size);
-	stack->dclone = malloc(stack->size * sizeof(int *));
-	if (!stack->data)
-		return (0);
+	stack->data = malloc(sizeof(int) * stack->size);
+	stack->dclone = malloc(stack->size * sizeof(int));
+}
+
+void	fill_stack(t_stack *stack, char **av)
+{
+	int	i;
+
 	i = 0;
 	while (i < stack->size)
 	{
 		stack->data[i] = ft_atoi_up(av[i]);
 		i++;
 	}
+}
+
+void	check_duplicates(t_stack *stack)
+{
+	int	i;
+	int	j;
+
 	i = 0;
 	while (i < stack->size)
 	{
@@ -63,5 +71,12 @@ int	check_arg(t_stack *stack, char **av)
 		}
 		i++;
 	}
+}
+
+int	check_arg(t_stack *stack, char **av)
+{
+	allocat_to_stack(stack, av);
+	fill_stack(stack, av);
+	check_duplicates(stack);
 	return (1);
 }
