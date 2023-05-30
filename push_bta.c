@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 22:43:14 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/29 22:54:11 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/30 21:19:27 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	push_from_bta(t_stack *stack)
 				size--;
 			}
 		}
-		else if (imax_b <= stack->dsize / 2)
+		else if (imax_b < stack->dsize / 2)
 		{
 			while (imax_b > 0)
 			{

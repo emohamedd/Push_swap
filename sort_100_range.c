@@ -6,20 +6,20 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:37:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/30 06:36:49 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/05/30 21:17:03 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pb_rb(t_stack *stack, int start, int end)
+void	pb_rb(t_stack *stack, int *start, int *end)
 {
 	pb(stack);
 	rb(stack);
-	if (end < stack->size - 1)
+	if (*end < stack->size - 1)
 	{
-		(start)++;
-		(end)++;
+		(*start)++;
+		(*end)++;
 	}
 }
 
@@ -41,13 +41,9 @@ void	push_to_b_stack(t_stack *stack, int start, int end)
 			}
 		}
 		else if (stack->data[0] < stack->help_stack[start])
-		{
-			pb_rb(stack, start, end);
-		}
+			pb_rb(stack, &start, &end);
 		else if (stack->data[0] > stack->help_stack[end])
-		{
 			ra(stack);
-		}
 	}
 }
 
@@ -57,7 +53,7 @@ void	sort_100(t_stack *stack)
 	int	end;
 
 	start = 0;
-	end = 15;
+	end = 19;
 	if (stack->size < end)
 	{
 		end = 5;
